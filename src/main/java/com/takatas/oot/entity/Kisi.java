@@ -86,7 +86,7 @@ public class Kisi extends EBase {
 		this.babaAdi = babaAdi;
 	}
 
-	@Column(name = "babaadi")
+	@Column(name = "anaadi")
 	public String getAnaAdi() {
 		return anaAdi;
 	}
@@ -152,14 +152,16 @@ public class Kisi extends EBase {
 		this.adSoyad = adSoyad;
 	}
 
-	@SuppressWarnings("deprecation")
-	@Transient
-	public int getYas() {
-		return new Date().getYear() - dogumTarihi.getYear();
-	}
-
-	public void setYas(int yas) {
-		this.yas = yas;
-	}
+	
+	
+//	@SuppressWarnings("deprecation")
+//	@Transient
+//	public int getYas() {
+//		return new Date().getYear() - dogumTarihi.getYear();
+//	}
+//
+//	public void setYas(int yas) {
+//		this.yas = yas;
+//	}
 
 }
