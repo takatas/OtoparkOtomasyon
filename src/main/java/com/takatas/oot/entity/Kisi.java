@@ -1,6 +1,6 @@
 package com.takatas.oot.entity;
 
-import java.beans.Transient;
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -14,6 +14,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
 
 @Entity
 @Table(name = "kisi")
@@ -37,7 +39,6 @@ public class Kisi extends EBase {
 	private String tel;
 	@SuppressWarnings("unused")
 	private String adSoyad;
-	@SuppressWarnings("unused")
 	private int yas;
 
 	@Column(name = "ad", length = 70)
@@ -151,17 +152,14 @@ public class Kisi extends EBase {
 	public void setAdSoyad(String adSoyad) {
 		this.adSoyad = adSoyad;
 	}
+	
+	@Transient	
+	public int getYas() {
+		return new Date().getYear() - dogumTarihi.getYear();
+	}
 
-	
-	
-//	@SuppressWarnings("deprecation")
-//	@Transient
-//	public int getYas() {
-//		return new Date().getYear() - dogumTarihi.getYear();
-//	}
-//
-//	public void setYas(int yas) {
-//		this.yas = yas;
-//	}
+	public void setYas(int yas) {
+		this.yas = yas;
+	}
 
 }

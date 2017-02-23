@@ -18,18 +18,22 @@
 		<p:growl id="growl" life="6000" autoUpdate="true" showDetail="true" />
 
 		<p:dataTable id="tblKisi" widgetVar="tblKisi" var="kisi"
-			value="#{kisiBean.kisis}" rows="10" paginator="true"
+			resizableColumns="true" liveResize="true" value="#{kisiBean.kisis}"
+			rows="10" paginator="true"
 			paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 			rowsPerPageTemplate="5,10,100">
-			<p:column headerText="Id" sortBy="#{kisi.id}" filterBy="#{kisi.id}" filterMatchMode="contains">
+			<p:column headerText="Id" sortBy="#{kisi.id}" filterBy="#{kisi.id}"
+				filterMatchMode="contains">
 				<h:outputText value="#{kisi.id}" />
 			</p:column>
 
-			<p:column headerText="Ad" sortBy="#{kisi.ad}" filterBy="#{kisi.ad}" filterMatchMode="contains">
+			<p:column headerText="Ad" sortBy="#{kisi.ad}" filterBy="#{kisi.ad}"
+				filterMatchMode="contains">
 				<h:outputText value="#{kisi.ad}" />
 			</p:column>
 
-			<p:column headerText="Soyad" sortBy="#{kisi.soyad}" filterBy="#{kisi.soyad}" filterMatchMode="contains">
+			<p:column headerText="Soyad" sortBy="#{kisi.soyad}"
+				filterBy="#{kisi.soyad}" filterMatchMode="contains">
 				<h:outputText value="#{kisi.soyad}" />
 			</p:column>
 
@@ -37,15 +41,18 @@
 				<h:outputText value="#{kisi.tc}" />
 			</p:column>
 
-			<p:column headerText="Baba Adı" sortBy="#{kisi.babaAdi}" filterBy="#{kisi.babaAdi}" filterMatchMode="contains">
+			<p:column headerText="Baba Adı" sortBy="#{kisi.babaAdi}"
+				filterBy="#{kisi.babaAdi}" filterMatchMode="contains">
 				<h:outputText value="#{kisi.babaAdi}" />
 			</p:column>
 
-			<p:column headerText="Ana Adı" sortBy="#{kisi.anaAdi}" filterBy="#{kisi.anaAdi}" filterMatchMode="contains">
+			<p:column headerText="Ana Adı" sortBy="#{kisi.anaAdi}"
+				filterBy="#{kisi.anaAdi}" filterMatchMode="contains">
 				<h:outputText value="#{kisi.anaAdi}" />
 			</p:column>
 
-			<p:column headerText="Adres" sortBy="#{kisi.acikAdres}" filterBy="#{kisi.acikAdres}" filterMatchMode="contains">
+			<p:column headerText="Adres" sortBy="#{kisi.acikAdres}"
+				filterBy="#{kisi.acikAdres}" filterMatchMode="contains">
 				<h:outputText value="#{kisi.acikAdres}" />
 			</p:column>
 
@@ -101,8 +108,6 @@
 			</p:panelGrid>
 
 		</p:dialog>
-
-
 
 		<p:ajaxStatus onstart="PF('statusDialog').show()"
 			onsuccess="PF('statusDialog').hide()" />
